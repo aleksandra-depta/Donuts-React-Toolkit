@@ -5,6 +5,7 @@ export const Container = styled.div`
   justify-content: end;
   align-items: center;
   margin: 3rem 6rem;
+  height: 60vh;
 
   @media only screen and (max-width: 992px) {
     justify-content: center;
@@ -25,4 +26,3 @@ export const LogoContainer = styled.img`
 export const ButtonsContainer = styled.div`
   margin-top: 5rem;
 `;
-

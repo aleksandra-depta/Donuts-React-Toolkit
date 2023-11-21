@@ -10,38 +10,35 @@ import { HeadingH3 } from "../../styled";
 import { Content, TotalsContainer } from "./shoppingCart.styles";
 
 const ShoppingCart = () => {
-
-  const { activeInputSearch } = useSelector((store) => store.cart);
-  const { totalAmount } = useSelector((store) => store.cart);
+  const { activeInputSearch, cart } = useSelector((store) => store.cart);
 
   return (
     <>
-      { activeInputSearch ?
-        <SearchBarResults/>
-      : 
+      {activeInputSearch ? (
+        <SearchBarResults />
+      ) : (
         <>
-          <NavSteps/>
+          <NavSteps />
           <div>
-            { totalAmount === 0 ? (
+            {cart.length === 0 ? (
               <EmptyCart />
             ) : (
               <>
                 <Content>
-                  <Outlet/>
+                  <Outlet />
                   <TotalsContainer>
                     <HeadingH3>ORDER SUMMARY</HeadingH3>
-                    <CardTotals/>
+                    <CardTotals />
                   </TotalsContainer>
                 </Content>
               </>
             )}
           </div>
         </>
-      }
-      <Footer/>
+      )}
+      <Footer />
     </>
   );
 };
 
 export default ShoppingCart;
-

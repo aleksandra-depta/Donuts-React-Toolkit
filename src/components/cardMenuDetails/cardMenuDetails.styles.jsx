@@ -13,8 +13,8 @@ export const CardDetailsContainer = styled.div`
 
 export const Content = styled.div`
   position: relative;
-  background-color: ${props => props.theme.colors.brownLight};
-  box-shadow: 0 0 1rem ${props => props.theme.colors.grey};
+  background-color: ${(props) => props.theme.colors.brownLight};
+  box-shadow: 0 0 1rem ${(props) => props.theme.colors.grey};
   border-radius: 70px;
   width: 75rem;
   position: absolute;
@@ -32,12 +32,12 @@ export const Content = styled.div`
   }
   @media only screen and (max-width: 768px) {
     width: 70vw;
-    display: flex; 
+    display: flex;
     flex-direction: column;
   }
   @media only screen and (max-width: 576px) {
     width: 80vw;
-    padding: 1.2rem;
+    padding: 3rem;
   }
 `;
 
@@ -75,11 +75,11 @@ export const Description = styled.div`
     padding: 3rem 0 0 0;
   }
 
-  &::before{
-    content: '';
+  &::before {
+    content: "";
     width: 1px;
     height: 100%;
-    background-color: ${props => props.theme.colors.grey};
+    background-color: ${(props) => props.theme.colors.grey};
     position: absolute;
     top: 0;
     left: 0px;

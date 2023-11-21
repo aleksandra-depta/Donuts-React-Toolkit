@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const FindUsContainer = styled.div`
   padding: 12rem 0 6rem 0;
@@ -7,6 +7,10 @@ export const FindUsContainer = styled.div`
   align-items: center;
   gap: 3rem;
   position: relative;
+
+  @media only screen and (max-width: 768px) {
+    margin-top: 10rem;
+  }
 `;
 
 export const Image = styled.img`

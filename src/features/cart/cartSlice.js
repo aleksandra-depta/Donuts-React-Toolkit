@@ -1,10 +1,11 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import axios from "axios";
 
-const url = 'http://127.0.0.1:5000/api/v1/products';
+const url = "http://127.0.0.1:5000/api/v1/products";
 
 const initialState = {
-  products : [],
+  products: [],
+  cart: [] || [...JSON.parse(localStorage.getItem("cart"))],
   totalAmount: 0,
   totalPrice: 0,
   isLoading: true,
@@ -13,37 +14,45 @@ const initialState = {
 };
 
 export const getCartItems = createAsyncThunk(
-  'cart/getCartItems',
+  "cart/getCartItems",
   async (name, thunkAPI) => {
     try {
       const resp = await axios(url);
       return resp.data.data.data;
     } catch (error) {
-      return thunkAPI.rejectWithValue('something went wrong');
+      return thunkAPI.rejectWithValue("something went wrong");
     }
   }
 );
 
 const cartSlice = createSlice({
-  name: 'cart',
+  name: "cart",
   initialState,
   reducers: {
     clearCart: (state) => {
-      state.cartItems = state.products.filter((item) => item.inCart === true)
+      state.cartItems = state.products.filter((item) => item.inCart === true);
       state.cartItems.map((item) => {
-        item.inCart = false; 
-        item.amount = 0
+        item.inCart = false;
+        item.amount = 0;
       });
+      state.cart = [];
+      localStorage.clear();
     },
 
     addItem: (state, { payload }) => {
       const cartItem = state.products.find((item) => item._id === payload);
       cartItem.inCart = true;
+
+      const itemToAdd = state.products.find((item) => item._id === payload);
+      state.cart = [...state.cart, itemToAdd];
     },
 
     removeItem: (state, { payload }) => {
       const cartItem = state.products.find((item) => item._id === payload);
       cartItem.inCart = false;
+
+      const updatedCart = state.cart.filter((item) => item._id !== payload);
+      state.cart = updatedCart;
     },
 
     increase: (state, { payload }) => {
@@ -56,7 +65,7 @@ const cartSlice = createSlice({
       const product = state.products.find((item) => item._id === payload);
       product.amount = product.amount - 1;
       product.priceTotal = product.price * product.amount;
-      if (product.amount <= 0 ) {
+      if (product.amount <= 0) {
         product.amount = 0;
         product.inCart = false;
       }
@@ -83,6 +92,7 @@ const cartSlice = createSlice({
 
     closeSearch: (state, { payload }) => {
       state.activeInputSearch = false;
+      state.searchField = "";
     },
   },
 
@@ -102,15 +112,15 @@ const cartSlice = createSlice({
   },
 });
 
-export const { 
+export const {
   clearCart,
-  addItem, 
-  removeItem, 
-  increase, 
-  decrease, 
+  addItem,
+  removeItem,
+  increase,
+  decrease,
   calculateTotals,
   onSearchChange,
-  closeSearch
+  closeSearch,
 } = cartSlice.actions;
 
 export default cartSlice.reducer;
