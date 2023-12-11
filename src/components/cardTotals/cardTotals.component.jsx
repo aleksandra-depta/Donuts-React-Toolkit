@@ -16,10 +16,7 @@ import {
   Summary,
   Button,
 } from "./cardTotals.styles";
-import {
-  stepAccess,
-  stepAccessDefault,
-} from "../../features/activeBtn/activeBtnSlice";
+import { stepAccessDefault } from "../../features/activeBtn/activeBtnSlice";
 
 const CardTotals = () => {
   const { formsComplited } = useSelector((store) => store.payment);
@@ -37,14 +34,9 @@ const CardTotals = () => {
   } = useSelector((store) => store.form);
 
   const { cart, totalPrice } = useSelector((store) => store.cart);
-  const [addOrder, { isLoading, isUpdating }] = useAddOrderMutation();
+  const [addOrder] = useAddOrderMutation();
   const { pickUpId } = useSelector((store) => store.location);
-  const {
-    data: location,
-    isSuccess,
-    isError,
-    error,
-  } = useGetLocationQuery(pickUpId);
+  const { data: location } = useGetLocationQuery(pickUpId);
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
