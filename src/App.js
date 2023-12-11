@@ -28,14 +28,13 @@ const App = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    function getAllCartItem() {
-      dispatch(getCartItems());
-    }
-    getAllCartItem();
+    dispatch(getCartItems());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
     dispatch(calculateTotals());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [products]);
 
   return (

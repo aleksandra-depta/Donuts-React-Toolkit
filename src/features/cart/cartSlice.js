@@ -31,10 +31,7 @@ const cartSlice = createSlice({
   reducers: {
     clearCart: (state) => {
       state.cartItems = state.products.filter((item) => item.inCart === true);
-      state.cartItems.map((item) => {
-        item.inCart = false;
-        item.amount = 0;
-      });
+      state.cartItems.map((item) => item.inCart === false && item.amount === 0);
       state.cart = [];
       localStorage.clear();
     },
