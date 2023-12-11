@@ -1,9 +1,11 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const donutsApi = createApi({
-  reducerPath: 'donutsApi',
-  baseQuery: fetchBaseQuery({ baseUrl: 'http://127.0.0.1:5000/api/v1' }),
-  tagTypes: ['Post'],
+  reducerPath: "donutsApi",
+  baseQuery: fetchBaseQuery({
+    baseUrl: "https://donuts-api.onrender.com/api/v1",
+  }),
+  tagTypes: ["Post"],
   endpoints: (build) => ({
     // getProducts: build.query({
     //   query: () => `/products`,
@@ -20,18 +22,18 @@ export const donutsApi = createApi({
     addOrder: build.mutation({
       query: (body) => ({
         url: `orders`,
-        method: 'POST',
+        method: "POST",
         body,
       }),
-      invalidatesTags: ['Posts'],
+      invalidatesTags: ["Posts"],
     }),
   }),
-})
+});
 
-export const { 
-  useGetProductsQuery, 
-  useGetCategoryQuery, 
-  useGetLocationsQuery, 
+export const {
+  useGetProductsQuery,
+  useGetCategoryQuery,
+  useGetLocationsQuery,
   useGetLocationQuery,
-  useAddOrderMutation
-} = donutsApi
+  useAddOrderMutation,
+} = donutsApi;
