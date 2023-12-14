@@ -16,9 +16,10 @@ import Payment from "./routes/payment/payment.component";
 import Confirmation from "./routes/confirmation/confimation.component";
 import Locations from "./routes/locations/locations.component";
 import SearchBarResults from "./components/searchBarResults/searchBarResults.component";
+import Loading from "./components/loadingSpinner/loadingSpinner.component";
 
 const App = () => {
-  const { products } = useSelector((store) => store.cart);
+  const { products, isLoading } = useSelector((store) => store.cart);
   const specialsCategory = products.filter((item) => item.type === "specials");
   const donutsCategory = products.filter((item) => item.type === "donuts");
   const coffeeCategory = products.filter((item) => item.type === "coffee");
@@ -38,44 +39,47 @@ const App = () => {
   }, [products]);
 
   return (
-    <Routes>
-      <Route path="/" element={<Navigation />}>
-        <Route index element={<Home />} />
-        <Route path="/menu" element={<Menu />}>
-          <Route
-            path=""
-            element={<MenuCards categories={specialsCategory} />}
-          />
-          <Route
-            path="donuts"
-            element={
-              <MenuCards
-                categories={[...donutsCategory, ...specialsCategory]}
-              />
-            }
-          />
-          <Route
-            path="coffee"
-            element={<MenuCards categories={coffeeCategory} />}
-          />
-          <Route
-            path="milkshakes"
-            element={<MenuCards categories={milkShakeCategory} />}
-          />
-        </Route>
-        <Route path="/shoppingCart" element={<ShoppingCart />}>
-          <Route path="cart" element={<Cart />} />
-          <Route path="address" element={<AddressForm />}>
-            <Route path="delivery" element={<FromDelivery />} />
-            <Route path="pickUp" element={<PickUp />} />
+    <>
+      {isLoading && <Loading />}
+      <Routes>
+        <Route path="/" element={<Navigation />}>
+          <Route index element={<Home />} />
+          <Route path="/menu" element={<Menu />}>
+            <Route
+              path=""
+              element={<MenuCards categories={specialsCategory} />}
+            />
+            <Route
+              path="donuts"
+              element={
+                <MenuCards
+                  categories={[...donutsCategory, ...specialsCategory]}
+                />
+              }
+            />
+            <Route
+              path="coffee"
+              element={<MenuCards categories={coffeeCategory} />}
+            />
+            <Route
+              path="milkshakes"
+              element={<MenuCards categories={milkShakeCategory} />}
+            />
           </Route>
-          <Route path="payment" element={<Payment />} />
+          <Route path="/shoppingCart" element={<ShoppingCart />}>
+            <Route path="cart" element={<Cart />} />
+            <Route path="address" element={<AddressForm />}>
+              <Route path="delivery" element={<FromDelivery />} />
+              <Route path="pickUp" element={<PickUp />} />
+            </Route>
+            <Route path="payment" element={<Payment />} />
+          </Route>
+          <Route path="/confirmation" element={<Confirmation />} />
+          <Route path="/search" element={<SearchBarResults />} />
+          <Route path="/locations" element={<Locations />} />
         </Route>
-        <Route path="/confirmation" element={<Confirmation />} />
-        <Route path="/search" element={<SearchBarResults />} />
-        <Route path="/locations" element={<Locations />} />
-      </Route>
-    </Routes>
+      </Routes>
+    </>
   );
 };
 
