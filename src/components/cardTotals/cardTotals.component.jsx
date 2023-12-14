@@ -33,7 +33,7 @@ const CardTotals = () => {
     type,
   } = useSelector((store) => store.form);
 
-  const { cart, totalPrice } = useSelector((store) => store.cart);
+  const { cart, products, totalPrice } = useSelector((store) => store.cart);
   const [addOrder] = useAddOrderMutation();
   const { pickUpId } = useSelector((store) => store.location);
   const { data: location } = useGetLocationQuery(pickUpId);
@@ -78,10 +78,12 @@ const CardTotals = () => {
     }
   };
 
+  const cartItems = products.filter((item) => item.inCart === true);
+
   return (
     <Totalscontainer>
       <ProductsList>
-        {cart.map((product) => (
+        {cartItems?.map((product) => (
           <List key={product._id}>
             <HeadingH4>{product.name}</HeadingH4>
             <TextMedium>

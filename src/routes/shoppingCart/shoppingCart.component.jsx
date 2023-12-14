@@ -10,7 +10,11 @@ import { HeadingH3 } from "../../styled";
 import { Content, TotalsContainer } from "./shoppingCart.styles";
 
 const ShoppingCart = () => {
-  const { activeInputSearch, cart } = useSelector((store) => store.cart);
+  const { activeInputSearch, cart, products } = useSelector(
+    (store) => store.cart
+  );
+
+  const cartItems = products.filter((item) => item.inCart === true);
 
   return (
     <>
@@ -20,7 +24,7 @@ const ShoppingCart = () => {
         <>
           <NavSteps />
           <div>
-            {cart.length === 0 ? (
+            {cartItems.length === 0 ? (
               <EmptyCart />
             ) : (
               <>

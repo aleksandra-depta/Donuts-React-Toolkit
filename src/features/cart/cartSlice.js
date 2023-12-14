@@ -34,6 +34,7 @@ const cartSlice = createSlice({
       state.cartItems.map((item) => item.inCart === false && item.amount === 0);
       state.cart = [];
       localStorage.clear();
+      state.products.map((item) => (item.inCart = false));
     },
 
     addItem: (state, { payload }) => {

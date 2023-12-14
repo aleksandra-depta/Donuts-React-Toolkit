@@ -14,8 +14,10 @@ import {
 } from "./cardShoppingCart.styles";
 
 const CardShoppingCart = () => {
-  const { cart } = useSelector((store) => store.cart);
+  const { cart, products } = useSelector((store) => store.cart);
   const dispatch = useDispatch();
+
+  const cartItems = products.filter((item) => item.inCart === true);
 
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
@@ -23,7 +25,7 @@ const CardShoppingCart = () => {
 
   return (
     <>
-      {cart.map((product) => (
+      {cartItems?.map((product) => (
         <CardShoppingCartContainer key={product._id}>
           <IconBin onClick={() => dispatch(removeItem(product._id))}>
             <ion-icon size="large" name="trash-outline"></ion-icon>
