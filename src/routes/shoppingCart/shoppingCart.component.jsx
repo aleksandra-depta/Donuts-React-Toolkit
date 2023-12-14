@@ -10,9 +10,7 @@ import { HeadingH3 } from "../../styled";
 import { Content, TotalsContainer } from "./shoppingCart.styles";
 
 const ShoppingCart = () => {
-  const { activeInputSearch, cart, products } = useSelector(
-    (store) => store.cart
-  );
+  const { activeInputSearch, products } = useSelector((store) => store.cart);
 
   const cartItems = products.filter((item) => item.inCart === true);
 
