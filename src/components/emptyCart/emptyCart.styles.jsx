@@ -4,8 +4,8 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6rem;
-  margin: 8rem 0 16rem 0;
+  gap: 4rem;
+  margin: 4rem 0 16rem 0;
 `;
 
 export const BtnContent = styled.div`

@@ -58,7 +58,7 @@ export const IconClose = styled.div`
 
 export const Image = styled.img`
   width: 27rem;
-  border-radius: 70px;
+  border-radius: 50px;
 
   @media only screen and (max-width: 992px) {
     width: 20rem;

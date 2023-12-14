@@ -17,7 +17,7 @@ export const Container = styled.div`
   bottom: 0;
   left: 0;
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr 2.6fr;
 
   @media only screen and (max-width: 992px) {
     grid-template-columns: 1fr 1fr;
@@ -35,8 +35,8 @@ export const EmptyDiv = styled.div`
 
 export const Content = styled.div`
   position: relative;
-  background-color: ${props => props.theme.colors.white};
-  box-shadow: 0 0 1rem ${props => props.theme.colors.grey};
+  background-color: ${(props) => props.theme.colors.white};
+  box-shadow: 0 0 1rem ${(props) => props.theme.colors.grey};
   padding: 2rem;
   display: flex;
   flex-direction: column;
@@ -51,5 +51,3 @@ export const IconClose = styled.div`
 export const LogoContainer = styled.img`
   width: 100%;
 `;
-
-
