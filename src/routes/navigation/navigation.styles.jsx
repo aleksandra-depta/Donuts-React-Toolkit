@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const NavigationContainer = styled.div`
   padding-top: 7rem;
@@ -18,7 +18,7 @@ export const LinksContainerLeft = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 5rem; 
+  gap: 5rem;
 
   @media only screen and (max-width: 768px) {
     gap: 2rem;
@@ -43,36 +43,37 @@ export const LogoContainer = styled.img`
 
 export const NavLink = styled(Link)`
   font-size: 1.8rem;
-  font-weight: 700; 
+  font-weight: 700;
   text-transform: uppercase;
-  color: ${props => props.theme.colors.black};
+  color: ${(props) => props.theme.colors.black};
 
   &:hover {
     transform: translateY(1px);
-    color: ${props => props.theme.colors.black};
-  } 
+    color: ${(props) => props.theme.colors.black};
+  }
 `;
 
 export const IconMenu = styled(Link)`
   cursor: pointer;
-  color: ${props => props.theme.colors.black};
+  color: ${(props) => props.theme.colors.black};
   padding-top: 8px;
 
   &:hover {
     transform: translateY(1px);
+    color: ${(props) => props.theme.colors.black};
   }
 `;
 
 export const IconHome = styled.img`
   width: 3rem;
-  
+
   &:hover {
     transform: translateY(1px);
   }
 `;
 
 export const TotalAmount = styled.div`
-  background-color: ${props => props.theme.colors.brown};
+  background-color: ${(props) => props.theme.colors.brown};
   position: absolute;
   min-width: 35px;
   min-height: 35px;
@@ -97,5 +98,3 @@ export const NavBackground = styled.img`
     display: none;
   }
 `;
-
-

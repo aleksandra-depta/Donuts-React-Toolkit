@@ -17,6 +17,7 @@ import Confirmation from "./routes/confirmation/confimation.component";
 import Locations from "./routes/locations/locations.component";
 import SearchBarResults from "./components/searchBarResults/searchBarResults.component";
 import Loading from "./components/loadingSpinner/loadingSpinner.component";
+import Page404 from "./routes/404/404.component";
 
 const App = () => {
   const { products, isLoading } = useSelector((store) => store.cart);
@@ -80,6 +81,7 @@ const App = () => {
             <Route path="/search" element={<SearchBarResults />} />
             <Route path="/locations" element={<Locations />} />
           </Route>
+          <Route path="*" element={<Page404 />} />
         </Routes>
       )}
     </>
