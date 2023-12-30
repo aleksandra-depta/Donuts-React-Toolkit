@@ -40,8 +40,6 @@ To run this project, install it locally using npm:
 
 # Layout Photoshop
 
-
-![Don'nuts - layout - Aleksandra Depta](https://github.com/aleksandra-depta/Donuts-React-Toolkit/assets/100097416/eee5be19-fb2f-482f-831e-929e0db7c2e1)
-
+![Don'nuts - layout - Aleksandra Depta](https://github.com/aleksandra-depta/Donuts-React-Toolkit/assets/100097416/0fce4a57-df88-444c-a530-e9b0e795705e)
 
 
