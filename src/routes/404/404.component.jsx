@@ -5,7 +5,7 @@ import Donut from "../../img/donut.png";
 const Page404 = () => {
   return (
     <Container>
-      <NavBackground src={Donut} alt="Donut Background Image" />
+      <NavBackground src={Donut} alt="Donut Background Image" loading="lazy" />
       <HeadingH1>Page not found</HeadingH1>
       <BtnBlack to="/">Go to homepage</BtnBlack>
     </Container>

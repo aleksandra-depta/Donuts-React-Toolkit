@@ -40,7 +40,7 @@ const Navigation = () => {
               scrollToTop();
             }}
           >
-            <IconHome src={Icon} alt="Donut Background Image" />
+            <IconHome src={Icon} alt="Donut Background Image" loading="lazy" />
           </Link>
           <IconMenu onClick={() => dispatch(openSideNav())}>
             <ion-icon name="menu-outline"></ion-icon>
@@ -70,7 +70,7 @@ const Navigation = () => {
           </BtnShoppingCart>
         </LinksContainerRight>
       </NavigationContainer>
-      <NavBackground src={Donut} alt="Donut Background Image" />
+      <NavBackground src={Donut} alt="Donut Background Image" loading="lazy" />
       <Outlet />
       {isOpen && <SideNav />}
     </Fragment>

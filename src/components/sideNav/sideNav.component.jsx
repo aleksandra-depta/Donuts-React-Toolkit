@@ -6,12 +6,18 @@ import { activeMenuBtn } from "../../features/activeBtn/activeBtnSlice";
 import { scrollToTop } from "../../features/scrollToTop/scrollToTop";
 
 import { BtnBrown } from "../../styled";
-import { Container, Content, EmptyDiv, IconClose, LogoContainer, NavContainer } from "./sideNav.styles";
+import {
+  Container,
+  Content,
+  EmptyDiv,
+  IconClose,
+  LogoContainer,
+  NavContainer,
+} from "./sideNav.styles";
 
 import Logo from "../../img/logo.png";
 
 const SideNav = () => {
-
   const { menuBtns } = useSelector((store) => store.activeBtn);
   const dispatch = useDispatch();
 
@@ -19,29 +25,35 @@ const SideNav = () => {
     <NavContainer>
       <Container>
         <Content>
-          <IconClose onClick={() => dispatch(closeSideNav())} >
-            <ion-icon size='large' name="close-outline"></ion-icon>
+          <IconClose onClick={() => dispatch(closeSideNav())}>
+            <ion-icon size="large" name="close-outline"></ion-icon>
           </IconClose>
           <Link to="/">
-            <LogoContainer src={ Logo } alt="Don'nuts logo" onClick={() => dispatch(closeSideNav())}/>
+            <LogoContainer
+              src={Logo}
+              alt="Don'nuts logo"
+              loading="lazy"
+              onClick={() => dispatch(closeSideNav())}
+            />
           </Link>
-          { navLinks.map((link) => (
-            <BtnBrown 
-              key={ link.link }
-              to={ link.link } 
+          {navLinks.map((link) => (
+            <BtnBrown
+              key={link.link}
+              to={link.link}
               onClick={() => {
                 dispatch(closeSideNav());
                 scrollToTop();
-                dispatch(activeMenuBtn(menuBtns.map(btn => btn.link)))
-              }}>
-                { link.name }
+                dispatch(activeMenuBtn(menuBtns.map((btn) => btn.link)));
+              }}
+            >
+              {link.name}
             </BtnBrown>
           ))}
         </Content>
         <EmptyDiv onClick={() => dispatch(closeSideNav())}></EmptyDiv>
       </Container>
     </NavContainer>
-  )
-}
+  );
+};
 
 export default SideNav;

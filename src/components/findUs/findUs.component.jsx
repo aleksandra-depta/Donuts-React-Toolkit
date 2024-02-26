@@ -6,16 +6,15 @@ import { FindUsContainer, Image } from "./findUs.styles";
 import Donut from "../../img/donut.png";
 
 const FindUs = () => {
-
   return (
     <FindUsContainer>
       <HeadingH1>Where to find us</HeadingH1>
-      <BtnBlack to='/locations' onClick={() => scrollToTop()}>
+      <BtnBlack to="/locations" onClick={() => scrollToTop()}>
         View our locations <span>&rarr;</span>
       </BtnBlack>
-      <Image src={ Donut } alt="Donut Image" />
+      <Image src={Donut} alt="Donut Image" loading="lazy" />
     </FindUsContainer>
-  )
-}
+  );
+};
 
 export default FindUs;

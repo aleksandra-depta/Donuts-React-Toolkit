@@ -30,7 +30,10 @@ const CardShoppingCart = () => {
           <IconBin onClick={() => dispatch(removeItem(product._id))}>
             <ion-icon size="large" name="trash-outline"></ion-icon>
           </IconBin>
-          <ProductImage src={require(`../../img/products/${product.image}`)} />
+          <ProductImage
+            src={require(`../../img/products/${product.image}`)}
+            loading="lazy"
+          />
           <Content>
             <HeadingH3>{product.name}</HeadingH3>
             <PriceConent>

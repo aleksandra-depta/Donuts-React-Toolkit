@@ -4,7 +4,7 @@ import Donut from "../../img/donut.png";
 const Loading = () => {
   return (
     <Container>
-      <Image src={Donut} alt="Donut Image" />
+      <Image src={Donut} alt="Donut Image" loading="lazy" />
     </Container>
   );
 };

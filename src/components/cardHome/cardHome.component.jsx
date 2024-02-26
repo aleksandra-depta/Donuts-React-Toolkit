@@ -22,7 +22,7 @@ const CardHome = ({ product }) => {
           onMouseOver ={() => dispatch(openModal(product._id))}
           onMouseOut ={() => dispatch(closeModal())}
         >
-          <ImageCard src={require(`../../img/products/${ product.image }`)} alt="Donut image" />
+          <ImageCard src={require(`../../img/products/${ product.image }`)} alt="Donut image" loading="lazy" />
           <HeadingH3>{ product.name }</HeadingH3>
           <TextMedium>{ product.title }</TextMedium>
           { product.inCart === true ?
