@@ -27,7 +27,11 @@ const Locations = () => {
     const rest = locations.data.data.filter(
       (location) => location._id !== pickUpId
     );
-    locationsAndSelected = [selected, ...rest];
+    if (pickUpId === "") {
+      locationsAndSelected = locations.data.data;
+    } else {
+      locationsAndSelected = [selected, ...rest];
+    }
   }
 
   return (
