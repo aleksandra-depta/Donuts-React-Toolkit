@@ -18,6 +18,7 @@ export const HeadingsContainer = styled.div`
 
 export const NavBackground = styled.img`
   position: absolute;
+  z-index: -1000;
 
   @media only screen and (min-width: 768px) {
     display: none;
