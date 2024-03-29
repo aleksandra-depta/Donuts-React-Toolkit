@@ -16,6 +16,19 @@ import { BtnBrownLight } from "../../styled";
 const Locations = () => {
   const { activeInputSearch } = useSelector((store) => store.cart);
   const { data: locations, isSuccess } = useGetLocationsQuery();
+  const { pickUpId } = useSelector((store) => store.location);
+
+  let locationsAndSelected = [];
+
+  if (isSuccess) {
+    const selected = locations.data.data.find(
+      (location) => location._id === pickUpId
+    );
+    const rest = locations.data.data.filter(
+      (location) => location._id !== pickUpId
+    );
+    locationsAndSelected = [selected, ...rest];
+  }
 
   return (
     <>
@@ -31,7 +44,7 @@ const Locations = () => {
                   <Button to="/shoppingCart/address/delivery">Delivery</Button>
                 </ButtonsContainer>
                 <CardsContainer>
-                  {locations.data.data.map((location) => (
+                  {locationsAndSelected?.map((location) => (
                     <CardLocation key={location._id} location={location} />
                   ))}
                 </CardsContainer>

@@ -12,7 +12,8 @@ export const CardContainer = styled.div`
     active !== "" &&
     id === active &&
     `
-    background:#f6f3ee;
+    border: 1px solid #111111;
+    border-radius: 20px
   `}
 `;
 
