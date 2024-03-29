@@ -5,7 +5,6 @@ import { closeSideNav } from "../../features/modalSideNavSlice";
 import { activeMenuBtn } from "../../features/activeBtnSlice";
 import { scrollToTop } from "../../features/scrollToTop";
 
-import { BtnBrown } from "../../styled";
 import {
   Btn,
   BtnContainer,

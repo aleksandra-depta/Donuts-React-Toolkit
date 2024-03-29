@@ -1,6 +1,6 @@
 import { scrollToTop } from "../../features/scrollToTop";
 
-import { BtnBlack, HeadingH1Brown } from "../../styled";
+import { HeadingH1Brown } from "../../styled";
 import { BtnContent, Container, Heading, Btn } from "./emptyCart.styles";
 
 const EmptyCart = () => {
