@@ -39,7 +39,9 @@ export const Image = styled.img`
   transition: all 0.5s ease-in-out;
 
   &:hover {
-    transform: scale(1.1) rotate(-60deg);
+    @media only screen and (min-width: 992px) {
+      transform: scale(1.1) rotate(-60deg);
+    }
   }
 
   @media only screen and (max-width: 992px) {

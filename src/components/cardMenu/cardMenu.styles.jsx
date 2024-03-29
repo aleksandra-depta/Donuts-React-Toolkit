@@ -12,6 +12,8 @@ export const CardComponent = styled.div`
 
   @media only screen and (max-width: 576px) {
     border-radius: 20px;
+    align-items: start;
+    gap: 1rem;
   }
 `;
 
@@ -27,6 +29,7 @@ export const CardDescription = styled.div`
 
   @media only screen and (max-width: 576px) {
     gap: 4px;
+    padding-top: 0;
   }
 `;
 
@@ -48,6 +51,6 @@ export const Image = styled.img`
   border-radius: 20%;
 
   @media only screen and (max-width: 576px) {
-    height: 10rem;
+    height: 8rem;
   }
 `;

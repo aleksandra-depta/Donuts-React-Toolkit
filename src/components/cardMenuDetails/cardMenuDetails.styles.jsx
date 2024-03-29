@@ -74,6 +74,7 @@ export const Image = styled.img`
   }
   @media only screen and (max-width: 576px) {
     width: 10rem;
+    border-radius: 20px;
   }
 `;
 
