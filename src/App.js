@@ -1,12 +1,13 @@
 import { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { calculateTotals, getCartItems } from "./features/cart/cartSlice";
+import { calculateTotals, getCartItems } from "./features/cartSlice";
 
 import Navigation from "./routes/navigation/navigation.component";
 import Home from "./routes/home/home.component";
 import Menu from "./routes/menu/menu.component";
 import MenuCards from "./routes/menuCards/menuCards.component";
+import Search from "./routes/search/search.component";
 import ShoppingCart from "./routes/shoppingCart/shoppingCart.component";
 import Cart from "./routes/cart/cart.component";
 import AddressForm from "./routes/addressForm/addressForm.component";
@@ -47,6 +48,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Navigation />}>
             <Route index element={<Home />} />
+            <Route path="/search" element={<Search />} />
             <Route path="/menu" element={<Menu />}>
               <Route
                 path=""

@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { closeSearch, onSearchChange } from "../../features/cart/cartSlice";
+import { closeSearch, onSearchChange } from "../../features/cartSlice";
 
 import {
   SearchInput,

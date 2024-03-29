@@ -32,24 +32,59 @@ a {
   }
 }
 
-ion-icon {
-  font-size: 50px;
-}
-
 .container {
   @media only screen and (min-width: 1540px) {
     max-width: 1400px;
   }
 }
 
-.map {
-  box-shadow: 0rem 0.3rem 0.8rem #525151;
-  border: 1rem solid #e0d7ce;
-  border-radius: 30px;
+@keyframes slideUp {
+  from {
+    transform: translateY(2rem);
+  }
+  to {
+    transform: translateY(0rem);
+  }
 }
 
-.swiper-pagination-bullet-active {
-  background-color: #9e6d3f !important;
+.swiper {
+  width: 92%;
+  padding: 0 10px;
+}
+
+.swiper-slide {
+  &:first-child {
+    animation: slideUp 0.5s;
+  }
+  &:nth-child(2) {
+    animation: slideUp 0.5s 0.1s;
+  }
+  &:nth-child(3) {
+    animation: slideUp 0.5s 0.2s;
+  }
+  &:nth-child(4) {
+    animation: slideUp 0.5s 0.3s;
+  }
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: #111111;
+}
+
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.prev {
+  left: -1rem;
+}
+
+.next {
+  right: -1rem;
 }
 
 //breakpoints

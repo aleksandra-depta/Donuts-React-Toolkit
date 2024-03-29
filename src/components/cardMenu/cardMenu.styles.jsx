@@ -1,14 +1,18 @@
-import { styled } from "styled-components";
+import styled from "styled-components";
 import { BtnBlackSmall } from "../../styled";
 
 export const CardComponent = styled.div`
   border-radius: 50px;
-  background-color: ${props => props.theme.colors.brownLight};
+  background-color: ${(props) => props.theme.colors.brownLight};
   display: flex;
   align-items: center;
   padding: 1rem;
   margin: 1rem;
   gap: 2rem;
+
+  @media only screen and (max-width: 576px) {
+    border-radius: 20px;
+  }
 `;
 
 export const LogoContainer = styled.img`
@@ -20,6 +24,10 @@ export const CardDescription = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
+
+  @media only screen and (max-width: 576px) {
+    gap: 4px;
+  }
 `;
 
 export const CardBottom = styled.div`
@@ -43,4 +51,3 @@ export const Image = styled.img`
     height: 10rem;
   }
 `;
-

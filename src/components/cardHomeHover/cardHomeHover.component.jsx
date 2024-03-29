@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux";
-import { addItem } from "../../features/cart/cartSlice";
+import { addItem } from "../../features/cartSlice";
 import Counter from "../counter/counter.component";
-import { scrollToTop } from "../../features/scrollToTop/scrollToTop";
+import { scrollToTop } from "../../features/scrollToTop";
 
 import {
   BtnBrownSmall,
@@ -16,6 +16,7 @@ import {
   Image,
   Button,
   PriceContent,
+  TextContent,
 } from "./cardHomeHover.styles";
 
 const CardHomeHover = ({ product }) => {
@@ -28,30 +29,32 @@ const CardHomeHover = ({ product }) => {
         alt="Donut image"
         loading="lazy"
       />
-      <HeadingH3>{product.name}</HeadingH3>
-      <TextMedium>{product.subtitle}</TextMedium>
-      <HeadingH4>
-        {product.priceTotal ? (
-          <span>$ {Number.parseFloat(product.priceTotal).toFixed(2)}</span>
+      <TextContent>
+        <HeadingH3>{product.name}</HeadingH3>
+        <TextMedium>{product.subtitle}</TextMedium>
+        <HeadingH4>
+          {product.priceTotal ? (
+            <span>$ {Number.parseFloat(product.priceTotal).toFixed(2)}</span>
+          ) : (
+            <PriceContent>
+              <span>$ {product.price.toFixed(2)}</span>
+              <TextSmall>/per 1</TextSmall>
+            </PriceContent>
+          )}
+        </HeadingH4>
+        <Counter product={product} />
+        {product.inCart === true ? (
+          <BtnBrownSmall to="/shoppingCart/cart" onClick={() => scrollToTop()}>
+            <ion-icon size="large" name="cart-outline"></ion-icon>
+          </BtnBrownSmall>
+        ) : product.amount > 0 ? (
+          <Button onClick={() => dispatch(addItem(product._id))}>
+            Add to cart
+          </Button>
         ) : (
-          <PriceContent>
-            <span>$ {product.price.toFixed(2)}</span>
-            <TextSmall>/per 1</TextSmall>
-          </PriceContent>
+          <BtnInactiveSmall>Add to cart</BtnInactiveSmall>
         )}
-      </HeadingH4>
-      <Counter product={product} />
-      {product.inCart === true ? (
-        <BtnBrownSmall to="/shoppingCart/cart" onClick={() => scrollToTop()}>
-          <ion-icon size="large" name="cart-outline"></ion-icon>
-        </BtnBrownSmall>
-      ) : product.amount > 0 ? (
-        <Button onClick={() => dispatch(addItem(product._id))}>
-          Add to cart
-        </Button>
-      ) : (
-        <BtnInactiveSmall>Add to cart</BtnInactiveSmall>
-      )}
+      </TextContent>
     </CardContainer>
   );
 };

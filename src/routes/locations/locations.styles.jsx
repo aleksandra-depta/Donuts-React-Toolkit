@@ -34,6 +34,22 @@ export const CardsContainer = styled.div`
   height: 80vh;
   overflow-y: scroll;
 
+  &::-webkit-scrollbar {
+    width: 3px;
+  }
+
+  &::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 2px;
+    background-color: ${(props) => props.theme.colors.greyLight};
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 2px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+    background-color: ${(props) => props.theme.colors.black};
+  }
+
   @media only screen and (max-width: 992px) {
     height: 50vh;
   }

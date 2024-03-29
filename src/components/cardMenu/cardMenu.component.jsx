@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { openDetailModal } from "../../features/modalCardDetails/modalDetailsSlice";
+import { openDetailModal } from "../../features/modalDetailsSlice";
 import CardMenuDetails from "../cardMenuDetails/cardMenuDetails.component";
 
 import {

@@ -1,21 +1,21 @@
-import { configureStore } from '@reduxjs/toolkit'
-import { setupListeners } from '@reduxjs/toolkit/query'
-import { donutsApi } from './services/donuts'
+import { configureStore } from "@reduxjs/toolkit";
+import { setupListeners } from "@reduxjs/toolkit/query";
+import { donutsApi } from "./services/donuts";
 
-import cartReducer from './features/cart/cartSlice'
-import modalDetailsReducer from './features/modalCardDetails/modalDetailsSlice'
-import modalHoverReducer from './features/modalHoverCard/modalHoverSlice'
-import modalSideNavReducer from './features/modalSideNav/modalSideNavSlice'
-import activeBtnReducer from './features/activeBtn/activeBtnSlice'
-import locationReducer from './features/location/locationSlice'
-import formReducer from './features/form/formSlice'
+import cartReducer from "./features/cartSlice";
+import modalDetailsReducer from "./features/modalDetailsSlice";
+import modalHoverReducer from "./features/modalHoverSlice";
+import modalSideNavReducer from "./features/modalSideNavSlice";
+import activeBtnReducer from "./features/activeBtnSlice";
+import locationReducer from "./features/locationSlice";
+import formReducer from "./features/formSlice";
 
-import paymentReducer from './features/payment/paymentSlice'
+import paymentReducer from "./features/paymentSlice";
 
 export const store = configureStore({
   reducer: {
     [donutsApi.reducerPath]: donutsApi.reducer,
-    cart : cartReducer,
+    cart: cartReducer,
     modalDetails: modalDetailsReducer,
     modalHover: modalHoverReducer,
     modalSideNav: modalSideNavReducer,
@@ -27,6 +27,6 @@ export const store = configureStore({
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(donutsApi.middleware),
-})
+});
 
-setupListeners(store.dispatch)
+setupListeners(store.dispatch);

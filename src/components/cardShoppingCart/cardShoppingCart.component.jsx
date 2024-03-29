@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { removeItem } from "../../features/cart/cartSlice";
+import { removeItem } from "../../features/cartSlice";
 import Counter from "../counter/counter.component";
 
 import { HeadingH3, HeadingH4, TextSmall } from "../../styled";

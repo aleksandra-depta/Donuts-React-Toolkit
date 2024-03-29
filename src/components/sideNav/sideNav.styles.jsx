@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { styled } from "styled-components";
 
 export const NavContainer = styled.div`
@@ -40,14 +41,42 @@ export const Content = styled.div`
   padding: 2rem;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
 `;
 
 export const IconClose = styled.div`
   text-align: end;
   cursor: pointer;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
 `;
 
 export const LogoContainer = styled.img`
-  width: 100%;
+  width: 80%;
+`;
+
+export const BtnContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const Btn = styled(Link)`
+  border: none;
+  background-color: ${(props) => props.theme.colors.white};
+  color: ${(props) => props.theme.colors.grey};
+  font-size: 2rem;
+  border-bottom: 1px solid ${(props) => props.theme.colors.grey};
+  padding: 2rem;
+  transition: all 0.2s ease-in-out;
+
+  &:first-child {
+    margin-top: 2rem;
+    border-top: 1px solid ${(props) => props.theme.colors.grey};
+  }
+  &:hover {
+    font-size: 2.5rem;
+    color: ${(props) => props.theme.colors.black};
+  }
 `;

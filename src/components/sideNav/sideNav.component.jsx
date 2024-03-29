@@ -1,12 +1,14 @@
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { navLinks } from "../../services/dataSideNavBts";
-import { closeSideNav } from "../../features/modalSideNav/modalSideNavSlice";
-import { activeMenuBtn } from "../../features/activeBtn/activeBtnSlice";
-import { scrollToTop } from "../../features/scrollToTop/scrollToTop";
+import { closeSideNav } from "../../features/modalSideNavSlice";
+import { activeMenuBtn } from "../../features/activeBtnSlice";
+import { scrollToTop } from "../../features/scrollToTop";
 
 import { BtnBrown } from "../../styled";
 import {
+  Btn,
+  BtnContainer,
   Container,
   Content,
   EmptyDiv,
@@ -36,19 +38,21 @@ const SideNav = () => {
               onClick={() => dispatch(closeSideNav())}
             />
           </Link>
-          {navLinks.map((link) => (
-            <BtnBrown
-              key={link.link}
-              to={link.link}
-              onClick={() => {
-                dispatch(closeSideNav());
-                scrollToTop();
-                dispatch(activeMenuBtn(menuBtns.map((btn) => btn.link)));
-              }}
-            >
-              {link.name}
-            </BtnBrown>
-          ))}
+          <BtnContainer>
+            {navLinks.map((link) => (
+              <Btn
+                key={link.link}
+                to={link.link}
+                onClick={() => {
+                  dispatch(closeSideNav());
+                  scrollToTop();
+                  dispatch(activeMenuBtn(menuBtns.map((btn) => btn.link)));
+                }}
+              >
+                {link.name}
+              </Btn>
+            ))}
+          </BtnContainer>
         </Content>
         <EmptyDiv onClick={() => dispatch(closeSideNav())}></EmptyDiv>
       </Container>

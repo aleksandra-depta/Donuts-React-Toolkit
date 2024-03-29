@@ -1,19 +1,24 @@
-import { scrollToTop } from "../../features/scrollToTop/scrollToTop";
+import { scrollToTop } from "../../features/scrollToTop";
 
 import { BtnBlack, HeadingH1Brown } from "../../styled";
-import { BtnContent, Container } from "./emptyCart.styles";
+import { BtnContent, Container, Heading, Btn } from "./emptyCart.styles";
 
 const EmptyCart = () => {
-
   return (
     <Container>
-      <HeadingH1Brown>Your cart is empty</HeadingH1Brown>
+      <Heading>
+        <HeadingH1Brown>Your cart is empty</HeadingH1Brown>
+      </Heading>
       <BtnContent>
-        <BtnBlack to='/' onClick={() => scrollToTop()}>Home</BtnBlack>
-        <BtnBlack to='/menu' onClick={() => scrollToTop()}>Check menu</BtnBlack>
+        <Btn to="/" onClick={() => scrollToTop()}>
+          Home
+        </Btn>
+        <Btn to="/menu" onClick={() => scrollToTop()}>
+          Check menu
+        </Btn>
       </BtnContent>
     </Container>
-  )
-}
+  );
+};
 
 export default EmptyCart;

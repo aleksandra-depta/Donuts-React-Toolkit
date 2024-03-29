@@ -22,6 +22,11 @@ export const ButtonContent = styled.div`
   margin: 5rem 1rem;
   display: flex;
   justify-content: space-between;
+
+  @media only screen and (max-width: 768px) {
+    flex-direction: column-reverse;
+    gap: 5rem;
+  }
 `;
 
 export const IconClose = styled.div`
@@ -30,4 +35,3 @@ export const IconClose = styled.div`
   gap: 1rem;
   cursor: pointer;
 `;
-

@@ -1,10 +1,10 @@
 import { Fragment } from "react";
 import { Link, Outlet } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { activeMenuBtn } from "../../features/activeBtn/activeBtnSlice";
-import { closeSearch } from "../../features/cart/cartSlice";
-import { openSideNav } from "../../features/modalSideNav/modalSideNavSlice";
-import { scrollToTop } from "../../features/scrollToTop/scrollToTop";
+import { activeMenuBtn } from "../../features/activeBtnSlice";
+import { closeSearch } from "../../features/cartSlice";
+import { openSideNav } from "../../features/modalSideNavSlice";
+import { scrollToTop } from "../../features/scrollToTop";
 import SearchBar from "../../components/searchBar/searchBar.component";
 import SideNav from "../../components/sideNav/sideNav.component";
 
@@ -22,6 +22,7 @@ import {
 
 import Donut from "../../img/donut.png";
 import Icon from "../../img/icon.png";
+import { SearchButton } from "../../components/searchBar/searchBar.styles";
 
 const Navigation = () => {
   const { totalAmount } = useSelector((store) => store.cart);
@@ -57,7 +58,16 @@ const Navigation = () => {
           </NavLink>
         </LinksContainerLeft>
         <LinksContainerRight>
-          <SearchBar />
+          {window.innerWidth <= 768 ? (
+            <NavLink to="/search">
+              <SearchButton>
+                <ion-icon size="large" name="search-outline"></ion-icon>
+              </SearchButton>
+            </NavLink>
+          ) : (
+            <SearchBar />
+          )}
+
           <BtnShoppingCart
             to="/shoppingCart/cart"
             onClick={() => {

@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addItem } from "../../features/cart/cartSlice";
-import { closeDetailModal } from "../../features/modalCardDetails/modalDetailsSlice";
+import { addItem } from "../../features/cartSlice";
+import { closeDetailModal } from "../../features/modalDetailsSlice";
 import Counter from "../counter/counter.component";
-import { scrollToTop } from "../../features/scrollToTop/scrollToTop";
+import { scrollToTop } from "../../features/scrollToTop";
 
 import {
   BtnBlackSmall,

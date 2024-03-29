@@ -4,9 +4,9 @@ import {
   useAddOrderMutation,
   useGetLocationQuery,
 } from "../../services/donuts";
-import { emptyForm } from "../../features/payment/paymentSlice";
-import { clearCart } from "../../features/cart/cartSlice";
-import { scrollToTop } from "../../features/scrollToTop/scrollToTop";
+import { emptyForm } from "../../features/paymentSlice";
+import { clearCart } from "../../features/cartSlice";
+import { scrollToTop } from "../../features/scrollToTop";
 
 import { HeadingH3, HeadingH4, TextMedium } from "../../styled";
 import {
@@ -16,7 +16,7 @@ import {
   Summary,
   Button,
 } from "./cardTotals.styles";
-import { stepAccessDefault } from "../../features/activeBtn/activeBtnSlice";
+import { stepAccessDefault } from "../../features/activeBtnSlice";
 
 const CardTotals = () => {
   const { formsComplited } = useSelector((store) => store.payment);

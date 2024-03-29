@@ -1,6 +1,11 @@
 import { styled } from "styled-components";
+import { scaleUp1 } from "../../styledKeyframes";
 
 export const CardDetailsContainer = styled.div`
+  transition: all 0.2s ease-in-out;
+  animation: ${scaleUp1} 0.2s linear infinite;
+  animation-iteration-count: 1;
+
   background-color: rgba(17, 17, 17, 0.2);
   z-index: 5000;
   position: fixed;
@@ -9,6 +14,10 @@ export const CardDetailsContainer = styled.div`
   top: 0;
   left: 0;
   z-index: 100;
+
+  @media only screen and (max-width: 576px) {
+    overflow: scroll;
+  }
 `;
 
 export const Content = styled.div`
@@ -27,17 +36,16 @@ export const Content = styled.div`
   grid-template-columns: 1fr 1.3fr;
 
   @media only screen and (max-width: 992px) {
-    width: 80vw;
+    width: 90vw;
     grid-template-columns: 1fr 2fr;
   }
   @media only screen and (max-width: 768px) {
-    width: 70vw;
     display: flex;
     flex-direction: column;
   }
   @media only screen and (max-width: 576px) {
-    width: 80vw;
     padding: 3rem;
+    border-radius: 20px;
   }
 `;
 
@@ -51,8 +59,8 @@ export const IconClose = styled.div`
     top: -20rem;
   }
   @media only screen and (max-width: 576px) {
-    top: -18rem;
-    right: 2rem;
+    top: -10rem;
+    right: -1rem;
   }
 `;
 
@@ -64,6 +72,9 @@ export const Image = styled.img`
     width: 20rem;
     margin-right: 3rem;
   }
+  @media only screen and (max-width: 576px) {
+    width: 10rem;
+  }
 `;
 
 export const Description = styled.div`
@@ -72,7 +83,7 @@ export const Description = styled.div`
   text-align: left;
 
   @media only screen and (max-width: 768px) {
-    padding: 3rem 0 0 0;
+    padding: 1rem 0 0 0;
   }
 
   &::before {

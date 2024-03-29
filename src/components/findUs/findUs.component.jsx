@@ -1,18 +1,24 @@
-import { scrollToTop } from "../../features/scrollToTop/scrollToTop";
-
+import { scrollToTop } from "../../features/scrollToTop";
 import { BtnBlack, HeadingH1 } from "../../styled";
-import { FindUsContainer, Image } from "./findUs.styles";
+import { FindUsContainer, Btn, Image, Text } from "./findUs.styles";
+import Donut from "../../img/donutSmall.png";
 
-import Donut from "../../img/donut.png";
-
-const FindUs = () => {
+const FindUs = ({ isIntersecting }) => {
   return (
     <FindUsContainer>
-      <HeadingH1>Where to find us</HeadingH1>
-      <BtnBlack to="/locations" onClick={() => scrollToTop()}>
-        View our locations <span>&rarr;</span>
-      </BtnBlack>
-      <Image src={Donut} alt="Donut Image" loading="lazy" />
+      {isIntersecting && (
+        <>
+          <Text>
+            <HeadingH1>Where to find us</HeadingH1>
+          </Text>
+          <Btn>
+            <BtnBlack to="/locations" onClick={() => scrollToTop()}>
+              View our locations <span>&rarr;</span>
+            </BtnBlack>
+          </Btn>
+          <Image src={Donut} alt="Donut Image" loading="lazy" />
+        </>
+      )}
     </FindUsContainer>
   );
 };

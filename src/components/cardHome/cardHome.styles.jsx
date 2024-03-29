@@ -2,10 +2,10 @@ import styled from "styled-components";
 import { BtnShoppingCart } from "../../styled";
 
 export const Card = styled.div`
-  min-width: 18rem;
+  min-width: 16rem;
   height: 16.7rem;
-  margin: 130px 25px 150px 25px;
-  padding: 25px 20px 45px 20px;
+  margin: 130px 0px 150px 0px;
+  padding: 25px 10px 45px 10px;
   background-color: ${(props) => props.theme.colors.white};
   box-shadow: 0 0.5rem 0.9rem ${(props) => props.theme.colors.greyLight};
   border-radius: 50px;
@@ -16,11 +16,25 @@ export const Card = styled.div`
   gap: 1.1rem;
   text-align: center;
   cursor: pointer;
+
+  @media only screen and (max-width: 576px) {
+    margin: 180px 20px 150px 20px;
+  }
 `;
 
 export const ImageCard = styled.img`
   height: 10rem;
   margin-top: -6rem;
+
+  @media only screen and (max-width: 576px) {
+    height: 16rem;
+    margin-top: -13rem;
+  }
+`;
+
+export const TextContent = styled.div`
+  display: flex;
+  flex-direction: column;
 `;
 
 export const IconShoppingCart = styled(BtnShoppingCart)`

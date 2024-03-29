@@ -46,10 +46,11 @@ export const NavLink = styled(Link)`
   font-weight: 700;
   text-transform: uppercase;
   color: ${(props) => props.theme.colors.black};
+  transition: all 0.2s ease-in-out;
 
   &:hover {
-    transform: translateY(1px);
     color: ${(props) => props.theme.colors.black};
+    transform: translateY(-2px);
   }
 `;
 
@@ -57,18 +58,21 @@ export const IconMenu = styled(Link)`
   cursor: pointer;
   color: ${(props) => props.theme.colors.black};
   padding-top: 8px;
+  transition: all 0.2s ease-in-out;
+  font-size: 2.8rem;
 
   &:hover {
-    transform: translateY(1px);
     color: ${(props) => props.theme.colors.black};
+    transform: translateY(-2px);
   }
 `;
 
 export const IconHome = styled.img`
   width: 3rem;
+  transition: all 0.2s ease-in-out;
 
   &:hover {
-    transform: translateY(1px);
+    transform: translateY(-2px);
   }
 `;
 

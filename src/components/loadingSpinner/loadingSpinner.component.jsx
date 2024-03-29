@@ -1,5 +1,5 @@
 import { Container, Image } from "./loadingSpinner.styles";
-import Donut from "../../img/donut.png";
+import Donut from "../../img/donutSmall.png";
 
 const Loading = () => {
   return (
