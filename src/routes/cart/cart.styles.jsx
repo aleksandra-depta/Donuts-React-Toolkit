@@ -4,7 +4,11 @@ export const CardContainer = styled.div`
   margin: 3rem 3rem 0 0;
   display: flex;
   flex-direction: column;
-  border-top: 1px solid ${props => props.theme.colors.grey};
+  border-top: 1px solid ${(props) => props.theme.colors.grey};
+
+  @media only screen and (max-width: 576px) {
+    margin: 3rem 0 0 0;
+  }
 `;
 
 export const ButtonContent = styled.div`
@@ -19,4 +23,3 @@ export const IconClose = styled.div`
   gap: 1rem;
   cursor: pointer;
 `;
-

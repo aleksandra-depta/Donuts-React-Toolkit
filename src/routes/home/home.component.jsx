@@ -24,7 +24,7 @@ const Home = () => {
       ([entry]) => {
         setIsIntersecting(entry.isIntersecting);
       },
-      { rootMargin: "-300px" }
+      { rootMargin: "0px" }
     );
     observer.observe(sectionFindUs.current);
 

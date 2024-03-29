@@ -41,7 +41,7 @@ const Footer = () => {
         </Row>
         <Row>
           <Description>
-            Copyright &copy;<span> 2023 </span> by Don'nuts,
+            Copyright &copy;<span> 2024 </span> by Don'nuts,
             <br />
             Aleksandra Depta <br />
             Inc. All rights reserved.
@@ -57,7 +57,9 @@ const Footer = () => {
         </Description>
         <MediaLinks to="tel:215-23331-6120">215-23331-6120</MediaLinks>
         <br />
-        <MediaLinks to="mailto:hello@donnuts.com">hello@donnuts.com</MediaLinks>
+        <MediaLinks to="mailto:arch.depta@gmail.com">
+          hello@donnuts.com
+        </MediaLinks>
       </Col>
       <Col>
         <Row>

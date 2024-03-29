@@ -19,10 +19,10 @@ import {
   NavBackground,
   TotalAmount,
 } from "./navigation.styles";
+import { SearchButton } from "../../components/searchBar/searchBar.styles";
 
 import Donut from "../../img/donut.png";
 import Icon from "../../img/icon.png";
-import { SearchButton } from "../../components/searchBar/searchBar.styles";
 
 const Navigation = () => {
   const { totalAmount } = useSelector((store) => store.cart);

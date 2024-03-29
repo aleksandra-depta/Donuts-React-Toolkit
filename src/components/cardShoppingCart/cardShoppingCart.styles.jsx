@@ -5,10 +5,11 @@ export const CardShoppingCartContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 2rem;
-  border-bottom: 1px solid ${props => props.theme.colors.grey};
+  border-bottom: 1px solid ${(props) => props.theme.colors.grey};
+  position: relative;
 
-  &:nth-child(odd){
-    background-color: ${props => props.theme.colors.white};
+  &:nth-child(odd) {
+    background-color: ${(props) => props.theme.colors.white};
   }
 `;
 
@@ -34,11 +35,18 @@ export const PriceConent = styled.div`
 export const RowContent = styled.div`
   display: flex;
   align-items: center;
+  white-space: nowrap;
 `;
 
 export const IconBin = styled.div`
-  color: ${props => props.theme.colors.grey};
+  color: ${(props) => props.theme.colors.grey};
   cursor: pointer;
+
+  @media only screen and (max-width: 576px) {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
 `;
 
 export const ProductImage = styled.img`
@@ -53,4 +61,3 @@ export const ProductImage = styled.img`
     align-self: start;
   }
 `;
-

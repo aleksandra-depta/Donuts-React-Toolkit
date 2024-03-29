@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const SearchForm = styled.form`
   flex: 0 0 63%;
@@ -13,16 +13,16 @@ export const SearchInput = styled.input`
   font-family: inherit;
   text-align: right;
   font-size: 1.7rem;
-  color: ${props => props.theme.colors.grey};
+  color: ${(props) => props.theme.colors.grey};
   background-color: transparent;
   border: none;
-  border-bottom: 1px solid ${props => props.theme.colors.grey};
+  border-bottom: 1px solid ${(props) => props.theme.colors.grey};
   transition: all 0.2s;
-  
+
   &:focus {
     width: 90%;
     outline: none;
-    border-bottom: 1px solid ${props => props.theme.colors.black};
+    border-bottom: 1px solid ${(props) => props.theme.colors.black};
   }
 `;
 
@@ -30,12 +30,14 @@ export const SearchButton = styled.button`
   border: none;
   background-color: transparent;
   cursor: pointer;
+  color: ${(props) => props.theme.colors.black};
 
   &:focus {
     outline: none;
   }
   &:hover {
     transform: translateY(1px);
+    color: ${(props) => props.theme.colors.black};
   }
 `;
 
