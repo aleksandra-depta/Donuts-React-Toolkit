@@ -1,12 +1,21 @@
-import { Container, Image } from "./loadingSpinner.styles";
-import Donut from "../../img/donutSmall.png";
+import { ThreeDots } from "react-loader-spinner";
+import { Container } from "./loadingSpinner.styles";
 
-const Loading = () => {
+const LoadingSpinner = () => {
   return (
     <Container>
-      <Image src={Donut} alt="Donut Image" loading="lazy" />
+      <ThreeDots
+        visible={true}
+        height="50"
+        width="50"
+        color="#161616"
+        radius="9"
+        ariaLabel="three-dots-loading"
+        wrapperStyle={{}}
+        wrapperClass=""
+      />
     </Container>
   );
 };
 
-export default Loading;
+export default LoadingSpinner;

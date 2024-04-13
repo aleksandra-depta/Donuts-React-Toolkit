@@ -12,10 +12,11 @@ import {
   CardsContainer,
 } from "./locations.styles";
 import { BtnBrownLight } from "../../styled";
+import LoadingSpinner from "../../components/loadingSpinner/loadingSpinner.component";
 
 const Locations = () => {
   const { activeInputSearch } = useSelector((store) => store.cart);
-  const { data: locations, isSuccess } = useGetLocationsQuery();
+  const { data: locations, isSuccess, isLoading } = useGetLocationsQuery();
   const { pickUpId } = useSelector((store) => store.location);
 
   let locationsAndSelected = [];
@@ -40,6 +41,7 @@ const Locations = () => {
         <SearchBarResults />
       ) : (
         <>
+          {isLoading && <LoadingSpinner />}
           {isSuccess && (
             <LocationContainer>
               <div>
