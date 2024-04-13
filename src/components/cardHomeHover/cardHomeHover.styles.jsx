@@ -21,7 +21,8 @@ export const CardContainer = styled.div`
   @media only screen and (max-width: 1200px) {
     min-width: 16rem;
     background-color: ${(props) => props.theme.colors.white};
-    border-radius: 30px;
+    border-radius: 40px;
+    margin-top: 7rem;
   }
 
   @media only screen and (max-width: 768px) {
@@ -29,13 +30,18 @@ export const CardContainer = styled.div`
   }
 
   @media only screen and (max-width: 576px) {
-    width: 90%;
+    width: 100%;
     margin: 55px 20px 35px 20px;
   }
 `;
 
 export const Image = styled.img`
   height: 11rem;
+
+  @media only screen and (max-width: 1200px) {
+    margin-top: -6rem;
+  }
+
   @media only screen and (max-width: 576px) {
     height: 16rem;
   }
