@@ -3,9 +3,11 @@ import styled from "styled-components";
 
 export const COLORS = {
   white: "#fbfaf9",
+  whiteTransp: "#edeae75f",
   pureWhite: "#ffffff",
 
   black: "#111111",
+  blackTransp: "#0e0e0e57",
   grey: "#6b6464",
   greyLight: "#d1cfcb",
 

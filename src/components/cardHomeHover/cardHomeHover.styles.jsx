@@ -6,7 +6,7 @@ export const CardContainer = styled.div`
   padding: 1rem;
   margin: 25px 0px 35px 0px;
   background-color: ${(props) => props.theme.colors.brownLight};
-  box-shadow: 0 1rem 1rem ${(props) => props.theme.colors.greyLight};
+  box-shadow: 0 1rem 1rem ${(props) => props.theme.colors.blackTransp};
   border-radius: 50px;
   display: flex;
   flex-direction: column;
@@ -20,6 +20,7 @@ export const CardContainer = styled.div`
 
   @media only screen and (max-width: 1200px) {
     width: 210px;
+    background-color: ${(props) => props.theme.colors.white};
   }
 
   @media only screen and (max-width: 768px) {

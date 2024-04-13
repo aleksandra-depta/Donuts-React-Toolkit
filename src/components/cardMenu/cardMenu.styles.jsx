@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { BtnBlackSmall } from "../../styled";
 
 export const CardComponent = styled.div`
-  border-radius: 50px;
+  border-radius: 30px;
   background-color: ${(props) => props.theme.colors.brownLight};
   display: flex;
   align-items: center;
@@ -10,7 +10,7 @@ export const CardComponent = styled.div`
   margin: 1rem;
   gap: 2rem;
 
-  @media only screen and (max-width: 576px) {
+  @media only screen and (max-width: 1200px) {
     border-radius: 20px;
     align-items: start;
     gap: 1rem;

@@ -6,7 +6,8 @@ export const CardDetailsContainer = styled.div`
   animation: ${scaleUp1} 0.2s linear infinite;
   animation-iteration-count: 1;
 
-  background-color: rgba(17, 17, 17, 0.2);
+  /* background-color: rgba(17, 17, 17, 0.2); */
+  background-color: ${(props) => props.theme.colors.whiteTransp};
   z-index: 5000;
   position: fixed;
   height: 100vh;
@@ -23,7 +24,7 @@ export const CardDetailsContainer = styled.div`
 export const Content = styled.div`
   position: relative;
   background-color: ${(props) => props.theme.colors.brownLight};
-  box-shadow: 0 0 1rem ${(props) => props.theme.colors.grey};
+  box-shadow: 0 0 1rem ${(props) => props.theme.colors.greyLight};
   border-radius: 70px;
   width: 75rem;
   position: absolute;
