@@ -7,7 +7,7 @@ export const Card = styled.div`
   margin: 130px 0px 150px 0px;
   padding: 25px 10px 45px 10px;
   background-color: ${(props) => props.theme.colors.white};
-  box-shadow: 0 0.5rem 0.9rem ${(props) => props.theme.colors.blackTransp};
+  box-shadow: 0 0.5rem 0.9rem ${(props) => props.theme.colors.greyLight};
   border-radius: 50px;
   position: relative;
   display: flex;
