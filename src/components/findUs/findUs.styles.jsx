@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { rotate90, scaleUp2, scaleUp1 } from "../../styledKeyframes";
+import { scaleUp2, scaleUp1 } from "../../styledKeyframes";
 
 export const FindUsContainer = styled.div`
   padding: 12rem 0 6rem 0;

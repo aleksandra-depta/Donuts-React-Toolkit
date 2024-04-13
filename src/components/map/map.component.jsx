@@ -1,6 +1,5 @@
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import * as L from "leaflet";
-import { useState } from "react";
 
 const Map = ({ locations }) => {
   //  Create the Icon
@@ -12,22 +11,6 @@ const Map = ({ locations }) => {
     iconUrl:
       "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-black.png",
   });
-
-  const blackx2Icon = new LeafIcon({
-    iconUrl:
-      "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-black.png",
-  });
-
-  // //  Use the state hook:
-  const [icon, setIcon] = useState(blackIcon);
-
-  // // This function will change the state's icon:
-
-  // const changeIconColor = (icon) => {
-  //   if (icon.options.iconUrl === blackIcon.options.iconUrl) {
-  //     setIcon((current) => (current = blackIcon));
-  //   }
-  // };
 
   return (
     <MapContainer
