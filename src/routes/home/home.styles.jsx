@@ -11,8 +11,10 @@ export const HeadingsContainer = styled.div`
   gap: 1rem;
   position: relative;
 
-  @media only screen and (max-width: 768px) {
-    padding: 2rem 0 6rem 0;
+  @media only screen and (max-width: 992px) {
+    text-align: start;
+    padding-left: 12rem;
+    padding-top: 10rem;
   }
 `;
 
@@ -20,15 +22,15 @@ export const NavBackground = styled.img`
   position: absolute;
   z-index: -1000;
 
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 992px) {
     display: none;
   }
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 992px) {
     top: -4rem;
-    right: 40%;
+    left: -5rem;
     width: 28rem;
-    transform: rotate(-80deg);
+    transform: rotate(-10deg);
   }
 
   @media only screen and (max-width: 576px) {
@@ -45,6 +47,7 @@ export const LogoContainer = styled.img`
 
   @media only screen and (max-width: 992px) {
     width: 24rem;
+    align-self: flex-start;
   }
 
   @media only screen and (max-width: 576px) {

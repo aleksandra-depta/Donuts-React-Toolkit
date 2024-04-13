@@ -30,7 +30,6 @@ export const CardContainer = styled.div`
   }
 
   @media only screen and (max-width: 576px) {
-    width: 100%;
     margin: 55px 20px 35px 20px;
   }
 `;

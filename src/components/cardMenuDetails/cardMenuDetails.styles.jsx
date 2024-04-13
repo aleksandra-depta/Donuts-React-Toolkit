@@ -5,8 +5,6 @@ export const CardDetailsContainer = styled.div`
   transition: all 0.2s ease-in-out;
   animation: ${scaleUp1} 0.2s linear infinite;
   animation-iteration-count: 1;
-
-  /* background-color: rgba(17, 17, 17, 0.2); */
   background-color: ${(props) => props.theme.colors.whiteTransp};
   z-index: 5000;
   position: fixed;
@@ -25,7 +23,7 @@ export const Content = styled.div`
   position: relative;
   background-color: ${(props) => props.theme.colors.brownLight};
   box-shadow: 0 0 1rem ${(props) => props.theme.colors.greyLight};
-  border-radius: 70px;
+  border-radius: 50px;
   width: 75rem;
   position: absolute;
   top: 50%;
@@ -67,7 +65,7 @@ export const IconClose = styled.div`
 
 export const Image = styled.img`
   width: 27rem;
-  border-radius: 50px;
+  border-radius: 100%;
 
   @media only screen and (max-width: 992px) {
     width: 20rem;
