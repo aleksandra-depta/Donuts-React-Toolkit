@@ -37,6 +37,8 @@ export const Image = styled.img`
   right: -1rem;
   width: 30rem;
   transition: all 0.5s ease-in-out;
+  animation: ${scaleUp2} 0.6s linear infinite;
+  animation-iteration-count: 1;
 
   &:hover {
     @media only screen and (min-width: 992px) {
@@ -54,10 +56,5 @@ export const Image = styled.img`
     left: 50%;
     transform: translateX(-50%);
     top: -3rem;
-  }
-
-  @media only screen and (min-width: 768px) {
-    animation: ${rotate90} 0.5s linear infinite;
-    animation-iteration-count: 1;
   }
 `;

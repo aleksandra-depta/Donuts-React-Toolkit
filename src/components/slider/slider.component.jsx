@@ -28,34 +28,26 @@ const Slider = () => {
         slidesPerView={4}
         breakpoints={{
           0: {
-            spaceBetween: 10,
+            spaceBetween: 0,
             slidesPerView: 1,
           },
           576: {
-            width: 576,
-            slidesPerView: 2.5,
-          },
-          768: {
-            width: 768,
-            slidesPerView: 3.6,
+            spaceBetween: 20,
+            slidesPerView: 2,
           },
           992: {
-            width: 992,
-            slidesPerView: 4.6,
+            spaceBetween: 20,
+            slidesPerView: 3,
           },
           1200: {
-            width: 1200,
-            slidesPerView: 4.7,
-          },
-          1540: {
-            width: 1540,
-            slidesPerView: 4.9,
+            spaceBetween: 30,
+            slidesPerView: 4,
           },
         }}
       >
         {categories.map((product) => (
           <SwiperSlide key={product._id}>
-            {window.innerWidth <= 576 ? (
+            {window.innerWidth <= 1200 ? (
               <CardHomeHover product={product} />
             ) : (
               <CardHome product={product} />
@@ -66,7 +58,6 @@ const Slider = () => {
       <div className="prev">
         <ion-icon name="chevron-back-outline"></ion-icon>
       </div>
-
       <div className="next">
         <ion-icon name="chevron-forward-outline"></ion-icon>
       </div>
