@@ -19,7 +19,7 @@ export const CardContainer = styled.div`
   animation-iteration-count: 1;
 
   @media only screen and (max-width: 1200px) {
-    width: 210px;
+    min-width: 16rem;
     background-color: ${(props) => props.theme.colors.white};
   }
 
