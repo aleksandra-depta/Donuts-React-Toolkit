@@ -21,7 +21,7 @@ export const CardContainer = styled.div`
   @media only screen and (max-width: 1200px) {
     min-width: 16rem;
     background-color: ${(props) => props.theme.colors.white};
-    border-radius: 20px;
+    border-radius: 30px;
   }
 
   @media only screen and (max-width: 768px) {
